@@ -2,11 +2,11 @@
 
 ## Proposal
 
-- Sosh is social media, reimagined...by John. It's an ambitious project designed to test the limits of man, machine, caffeine, and caffeine-machine-man. It's big, I want to see if I can build it in a week to within a presentable standard in the spirit of 'Deploy early and often'.
-- The user of this application will be anyone who wants to take a good thing, like instant messanger, and add layers of complexity and navigation. It's like AIM, but with client-side routing.
-- Users of the application can expect to see messages and status updates in real-time from their community of friends, and also that one guy you met at a party once three years ago. Hey! looks like they're having a kid!
-- In order to consume the data that is being output to a user they will need a community of friends interacting via the platform to generate messages, status updates, and other content. Or like three bots; yeah, three bots would be good too.
-- Sosh will be developed with the use of Vue, Vuex, and Vue-router for the client-side content. Backend will be developed with Express and PostgreSQL.
+* Sosh is social media, reimagined...by John. It's an ambitious project designed to test the limits of man, machine, caffeine, and caffeine-machine-man. It's big, I want to see if I can build it in a week to within a presentable standard in the spirit of 'Deploy early and often'.
+* The user of this application will be anyone who wants to take a good thing, like instant messanger, and add layers of complexity and navigation. It's like AIM, but with client-side routing.
+* Users of the application can expect to see messages and status updates in real-time from their community of friends, and also that one guy you met at a party once three years ago. Hey! looks like they're having a kid!
+* In order to consume the data that is being output to a user they will need a community of friends interacting via the platform to generate messages, status updates, and other content. Or like three bots; yeah, three bots would be good too.
+* Sosh will be developed with the use of Vue, Vuex, and Vue-router for the client-side content. Backend will be developed with Express and PostgreSQL.
 
 ## Component Tree
 
