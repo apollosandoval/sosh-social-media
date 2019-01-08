@@ -1,13 +1,15 @@
 const express = require('express');
-
-const app = express();
 // parses incoming request bodies and makes them available under `req.body`
 const bodyParser = require('body-parser');
-const PORT = process.env.PORT || 8000;
+// enables Cross-Origin Resource Sharing for AJAX requests from foreign hosts
+const cors = require('cors');
+const app = express();
+const PORT = process.env.PORT || 8082;
 
 // express middleware
 app.use(bodyParser.json({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 
 // makes routes available to express app
 var routes_setter = require('./config/routes.js');

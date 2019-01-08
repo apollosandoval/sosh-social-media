@@ -5,8 +5,14 @@ const status = require('../controllers/status')
 
 module.exports = (app) => {
 
-  app.get('/', (req, res) => {
-    res.send('Hello World!');
-  });
+  // routes for users
+  app.get('/users', users.getAll);
+  app.get('/users/:id', users.getById);
+
+  // routes for messages
+  app.get('/messages', messages.getAll);
+
+  // routes for statuses
+  app.get('/status', status.getAll);
 
 };
