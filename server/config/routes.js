@@ -13,6 +13,6 @@ module.exports = (app) => {
   app.get('/messages', messages.getAll);
 
   // routes for statuses
-  app.get('/status', status.getAll);
+  app.get('/statuses', status.getAll);
 
 };
