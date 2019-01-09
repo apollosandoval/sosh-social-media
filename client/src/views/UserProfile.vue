@@ -3,30 +3,7 @@
     <!-- Top Section: User's banner, profile picture, and name -->
     <v-layout row justify-center>
       <v-flex xs12 sm6 offset-s3>
-        <v-card>
-          <v-img></v-img>
-          <v-list two-line>
-            <!-- email -->
-            <v-list-tile>
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>email@email.com</v-list-tile-title>
-                <v-list-tile-sub-title>email</v-list-tile-sub-title>
-              </v-list-tile-content>
-              <v-list-tile-action></v-list-tile-action>
-            </v-list-tile>
-            <v-divider inset />
-            <!-- location -->
-            <v-list-tile>
-              <v-list-tile-action></v-list-tile-action>
-              <v-list-tile-content>
-                <v-list-tile-title>Whateverland, AZ</v-list-tile-title>
-                <v-list-tile-sub-title>location</v-list-tile-sub-title>
-              </v-list-tile-content>
-              <v-list-tile-action></v-list-tile-action>
-            </v-list-tile>
-          </v-list>
-        </v-card>
+        <user-profile-card />
       </v-flex>
     </v-layout>
     <!-- Bottom Section: Status Timeline -->
@@ -40,10 +17,12 @@
 
 <script>
 import StatusTimeline from '../components/StatusTimeline';
+import UserProfileCard from '../components/UserProfileCard';
 
 export default {
   components: {
     'status-timeline': StatusTimeline,
+    'user-profile-card': UserProfileCard,
   },
   mounted() {
     this.$store.dispatch('getAllUsers');
