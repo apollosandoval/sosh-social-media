@@ -2,6 +2,12 @@
   <v-container>
     <v-layout>
       <!-- insert search-bar component here -->
+      <v-flex xs12 sm6 offset-sm3>
+        <v-text-field
+          v-model="searchTerm"
+          label="Search..."
+        ></v-text-field>
+      </v-flex>
     </v-layout>
     <v-layout>
       <v-flex xs12 sm6 offset-sm3>
@@ -31,12 +37,23 @@
 
 <script>
 export default {
+  data() {
+    return {
+      searchTerm: '',
+    }
+  },
   mounted() {
     this.$store.dispatch('getAllUsers');
   },
   computed: {
     friends() {
-      return this.$store.state.users.all;
+      const { user_id } = this.$store.state.auth;
+      const { users } = this.$store.state;
+
+      return users.allIds
+        .filter( key => key !== user_id)
+        .map( id => users.byId[id] )
+        .filter( friend => friend.name.includes(this.searchTerm) )
     }
   }
 }
