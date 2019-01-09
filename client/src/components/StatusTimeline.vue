@@ -23,6 +23,9 @@ export default {
   computed: {
     statuses() {
       return this.$store.state.statuses.all;
+    },
+    users() {
+      return this.$store.state.users.all;
     }
   }
 }

@@ -26,6 +26,7 @@ export default {
     'new-status-form': StatusForm,
   },
   mounted() {
+    this.$store.dispatch('getAllUsers');
     this.$store.dispatch('getAllStatuses');
   },
 }

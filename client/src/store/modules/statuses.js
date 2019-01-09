@@ -2,7 +2,10 @@ import axios from 'axios'
 
 export default {
   // initial state
-  state: {},
+  state: {
+    all: [],
+    isFetching: false,
+  },
 
   // getters
   getters: {},
