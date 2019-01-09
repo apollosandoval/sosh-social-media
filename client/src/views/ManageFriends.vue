@@ -7,17 +7,19 @@
       <v-flex xs12 sm6 offset-sm3>
         <v-card>
           <v-list two-line>
-            <template v-for="n in 4">
+            <template v-for="(friend,index) in friends">
+              <v-divider v-if="index !== 0" :key="`divider-${index}`"></v-divider>
               <v-list-tile
-                :key="n"
+                :key="friend.id"
               >
-                <v-list-avatar>
+                <v-list-tile-avatar>
+                  <img :src="friend.profilePhotoURL">
+                </v-list-tile-avatar>
 
-                </v-list-avatar>
-
-                <v-list-content>
-                  <v-list-tile-title>Name</v-list-tile-title>
-                </v-list-content>
+                <v-list-tile-content>
+                  <v-list-tile-title>{{friend.name}}</v-list-tile-title>
+                  <v-list-tile-sub-title>{{friend.email}}</v-list-tile-sub-title>
+                </v-list-tile-content>
               </v-list-tile>
             </template>
           </v-list>
@@ -29,7 +31,14 @@
 
 <script>
 export default {
-  
+  mounted() {
+    this.$store.dispatch('getAllUsers');
+  },
+  computed: {
+    friends() {
+      return this.$store.state.users.all;
+    }
+  }
 }
 </script>
 
