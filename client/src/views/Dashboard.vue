@@ -9,7 +9,7 @@
     </v-layout>
     <v-layout justify-center>
       <v-flex xs12 sm8>
-        <status-timeline />
+        <status-timeline :statuses="statuses" />
       </v-flex>
     </v-layout>
   </v-container>
@@ -28,6 +28,19 @@ export default {
   mounted() {
     this.$store.dispatch('getAllUsers');
     this.$store.dispatch('getAllStatuses');
+  },
+  computed: {
+    statuses() {
+      const { allIds, byId } = this.$store.state.statuses;
+      // eslint-disable-next-line
+      console.log('allIds: ', allIds);
+      const sortedStatuses = allIds.map( id => byId[id] ).sort( (a,b) => {
+        return a.created_at - b.created_at;
+      });
+      // eslint-disable-next-line
+      console.log('sorted status: ', sortedStatuses);
+      return sortedStatuses;
+    }
   },
 }
 </script>

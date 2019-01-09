@@ -1,9 +1,11 @@
 import axios from 'axios'
+import normalizeData from '../utils/NormalizeData'
 
 export default {
   // initial state
   state: {
-    all: [],
+    byId: {},
+    allIds: [],
     isFetching: false,
   },
 
@@ -29,7 +31,7 @@ export default {
       state.isFetching = !state.isFetching;
     },
     RECEIVE_ALL_MESSAGES(state, payload) {
-      state.all = payload.messages;
+      state = normalizeData(state, payload.messages);
       state.isFetching = false;
     }
   }

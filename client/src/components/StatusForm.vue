@@ -6,7 +6,8 @@
     <v-card-text>
       <v-form>
         <v-text-field
-          prepend-icon=""
+          label="Post a new status..."
+          prepend-icon="mode_edit"
         ></v-text-field>
       </v-form>
     </v-card-text>

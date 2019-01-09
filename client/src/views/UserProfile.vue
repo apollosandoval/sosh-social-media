@@ -29,7 +29,7 @@ export default {
     this.$store.dispatch('getStatusesByUserId');
   },
   computed: {
-    statuses() {
+    statusesById() {
       return this.$store.getters('statusesById', id);
     }
   }

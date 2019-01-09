@@ -1,14 +1,20 @@
 import axios from 'axios'
+import normalizeData from '../utils/NormalizeData'
 
 export default {
   // initial state
   state: {
-    all: [],
+    byId: {},
+    allIds: [],
     isFetching: false,
   },
 
   // getters
-  getters: {},
+  getters: {
+    // statusesById: (state) => (user_id) => {
+      
+    // },
+  },
 
   // actions
   actions: {
@@ -28,7 +34,7 @@ export default {
       state.isFetching = !state.isFetching;
     },
     RECEIVE_ALL_STATUSES(state, payload) {
-      state.all = payload.statuses;
+      state = normalizeData(state, payload.statuses);
       state.isFetching = false;
     }
   }

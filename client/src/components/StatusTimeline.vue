@@ -8,7 +8,7 @@
     >
       <span slot="opposite">{{ status.created_at | moment("from", "now") }}</span>
       <v-card class="elevation-2">
-        <v-card-title class="headline">User Id: {{status.user_id}}</v-card-title>
+        <v-card-title class="headline">{{users[status.user_id].name}}</v-card-title>
         <v-card-text>
           {{status.status}}
         </v-card-text>
@@ -20,12 +20,10 @@
 
 <script>
 export default {
+  props: ['statuses'],
   computed: {
-    statuses() {
-      return this.$store.state.statuses.all;
-    },
     users() {
-      return this.$store.state.users.all;
+      return this.$store.state.users.byId;
     }
   }
 }

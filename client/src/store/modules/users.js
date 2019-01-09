@@ -1,8 +1,10 @@
 import axios from 'axios'
+import normalizeData from '../utils/NormalizeData'
 
 // initial state
 const state = {
-  all: [],
+  byId: {},
+  allIds: [],
   isFetching: false,
 };
 
@@ -30,7 +32,7 @@ const mutations = {
   },
 
   RECEIVE_ALL_USERS(state, payload) {
-    state.all = payload.users;
+    state = normalizeData(state, payload.users);
     state.isFetching = false;
   },
 
