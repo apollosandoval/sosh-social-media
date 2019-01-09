@@ -11,9 +11,11 @@ export default {
 
   // getters
   getters: {
-    // statusesById: (state) => (user_id) => {
-      
-    // },
+    statusesById: (state) => (user_id) => {
+      return state.allIds
+        .map( id => state.byId[id] )
+        .filter( status => status.user_id === user_id)
+    },
   },
 
   // actions

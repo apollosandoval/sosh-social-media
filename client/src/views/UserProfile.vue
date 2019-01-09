@@ -3,13 +3,13 @@
     <!-- Top Section: User's banner, profile picture, and name -->
     <v-layout row justify-center>
       <v-flex xs12 sm6 offset-s3>
-        <user-profile-card />
+        <user-profile-card user_id="5" />
       </v-flex>
     </v-layout>
     <!-- Bottom Section: Status Timeline -->
     <v-layout row justify-center>
       <v-flex xs12 sm8>
-        <status-timeline />
+        <status-timeline :statuses="statusesById"/>
       </v-flex>
     </v-layout>
   </v-container>
@@ -26,11 +26,11 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getAllUsers');
-    this.$store.dispatch('getStatusesByUserId');
+    this.$store.dispatch('getAllStatuses');
   },
   computed: {
     statusesById() {
-      return this.$store.getters('statusesById', id);
+      return this.$store.getters.statusesById(5);
     }
   }
 }

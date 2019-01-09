@@ -2,7 +2,7 @@
   <v-timeline>
     <v-timeline-item
       v-for="status in statuses"
-      :key="status.id"
+      :key="`status-${status.id}`"
       color="red lighten-2"
       large
     >

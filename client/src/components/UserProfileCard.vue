@@ -8,7 +8,7 @@
       <v-list-tile>
         <v-list-tile-action></v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title>email@email.com</v-list-tile-title>
+          <v-list-tile-title>{{user.email}}</v-list-tile-title>
           <v-list-tile-sub-title>email</v-list-tile-sub-title>
         </v-list-tile-content>
         <v-list-tile-action></v-list-tile-action>
@@ -17,7 +17,7 @@
       <v-list-tile>
         <v-list-tile-action></v-list-tile-action>
         <v-list-tile-content>
-          <v-list-tile-title>Whateverland, AZ</v-list-tile-title>
+          <v-list-tile-title>{{user.location}}</v-list-tile-title>
           <v-list-tile-sub-title>location</v-list-tile-sub-title>
         </v-list-tile-content>
         <v-list-tile-action></v-list-tile-action>
@@ -28,7 +28,12 @@
 
 <script>
 export default {
-  
+  props: ['user_id'],
+  computed: {
+    user() {
+      return this.$store.getters.userById(this.user_id);
+    }
+  }
 }
 </script>
 

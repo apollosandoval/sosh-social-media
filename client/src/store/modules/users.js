@@ -9,7 +9,11 @@ const state = {
 };
 
 // getters
-const getters = {};
+const getters = {
+  userById: (state) => (user_id) => {
+    return state.byId[user_id];
+  }
+};
 
 // actions
 const actions = {
