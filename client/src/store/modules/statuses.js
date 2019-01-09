@@ -21,11 +21,19 @@ export default {
     async getAllStatuses(context) {
       try {
         const res = await axios.get('http://localhost:8082/statuses');
-        context.commit('RECEIVE_ALL_STATUSES', {statuses: res.data})
+        context.commit('RECEIVE_ALL_STATUSES', {statuses: res.data});
       } catch (err) {
         context.commit('REQUEST_ALL_STATUSES');
       }
-    }
+    },
+    async postStatus(context, status) {
+      try {
+        const res = await axios.post('http://localhost:8082/statuses/:user_id', status);
+        context.commit('ADD_STATUS', {status: res.data});
+      } catch (err) {
+        throw new Error(err);
+      }
+    },
   },
 
   // mutations
@@ -36,6 +44,14 @@ export default {
     RECEIVE_ALL_STATUSES(state, payload) {
       state = normalizeData(state, payload.statuses);
       state.isFetching = false;
+    },
+    ADD_STATUS(state, payload) {
+      const { status } = payload;
+      state.byId = {
+        ...state.byId,
+        [status[0].id]: status[0]
+      },
+      state.allIds = [status[0].id, ...state.allIds]
     }
   }
 }

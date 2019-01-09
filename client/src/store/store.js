@@ -8,6 +8,11 @@ import statuses from './modules/statuses'
 Vue.use(Vuex);
 
 export default new Vuex.Store({
+  state: {
+    auth: {
+      user_id: 1,
+    }
+  },
   modules: {
     users,
     messages,

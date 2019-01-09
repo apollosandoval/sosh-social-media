@@ -32,13 +32,9 @@ export default {
   computed: {
     statuses() {
       const { allIds, byId } = this.$store.state.statuses;
-      // eslint-disable-next-line
-      console.log('allIds: ', allIds);
       const sortedStatuses = allIds.map( id => byId[id] ).sort( (a,b) => {
         return a.created_at - b.created_at;
       });
-      // eslint-disable-next-line
-      console.log('sorted status: ', sortedStatuses);
       return sortedStatuses;
     }
   },
