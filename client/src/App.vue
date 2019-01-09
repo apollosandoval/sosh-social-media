@@ -7,7 +7,8 @@
       <!-- router-view component here -->
       <!-- <Dashboard /> -->
       <!-- <ManageFriends /> -->
-      <UserProfile />
+      <!-- <UserProfile /> -->
+      <UserSettings />
     </v-content>
   </v-app>
 </template>
@@ -16,7 +17,8 @@
 import Navbar from './components/Navbar';
 // import Dashboard from './views/Dashboard';
 // import ManageFriends from './views/ManageFriends';
-import UserProfile from './views/UserProfile';
+// import UserProfile from './views/UserProfile';
+import UserSettings from './views/UserSettings';
 
 export default {
   name: 'App',
@@ -24,7 +26,8 @@ export default {
     'nav-bar': Navbar,
     // Dashboard,
     // ManageFriends,
-    UserProfile,
+    // UserProfile,
+    UserSettings,
   },
   
 }

@@ -26,7 +26,12 @@ export default {
   },
   mounted() {
     this.$store.dispatch('getAllUsers');
-    this.$store.dispatch('getAllStatuses');
+    this.$store.dispatch('getStatusesByUserId');
+  },
+  computed: {
+    statuses() {
+      return this.$store.getters('statusesById', id);
+    }
   }
 }
 </script>
