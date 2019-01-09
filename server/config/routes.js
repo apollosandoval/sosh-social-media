@@ -14,5 +14,6 @@ module.exports = (app) => {
 
   // routes for statuses
   app.get('/statuses', status.getAll);
+  app.post('/statuses/:user_id', status.postStatus);
 
 };
