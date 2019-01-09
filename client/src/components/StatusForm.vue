@@ -14,7 +14,7 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="primary">Post</v-btn>
+      <v-btn @click="addStatus" color="primary">Post</v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -35,7 +35,8 @@ export default {
         'status': this.status,
         'user_id': user_id,
         'img_url': img_url,
-      })
+      });
+      this.status = '';
     }
   }
 }
