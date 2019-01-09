@@ -29,7 +29,7 @@ export default {
       state.isFetching = !state.isFetching;
     },
     RECEIVE_ALL_MESSAGES(state, payload) {
-      state.messages = payload.messages;
+      state.all = payload.messages;
       state.isFetching = false;
     }
   }
