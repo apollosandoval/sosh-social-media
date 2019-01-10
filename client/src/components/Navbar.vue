@@ -14,9 +14,22 @@
     >
       <v-layout column align-center>
         <v-flex class="mt-5">
-          <v-avatar size="150">
-            <img src="http://placekitten.com/200/200">
+          <v-avatar size="250">
+            <!-- TODO: make avatar component dynamic from auth user -->
+            <img
+              src="http://www.placepuppy.net/400/400"
+            >
           </v-avatar>
+        </v-flex>
+        <v-flex>
+          <v-list>
+            <v-list-tile-title>
+              {{auth.name}}
+            </v-list-tile-title>
+            <v-list-tile-sub-title>
+              {{auth.location}}
+            </v-list-tile-sub-title>
+          </v-list>
         </v-flex>
       </v-layout>
       <v-spacer></v-spacer>
@@ -43,13 +56,15 @@ export default {
       links: [
         {name: 'Home', icon: 'dashboard', route: '/'},
         {name: 'Friends', icon: 'contacts', route: '/friends'},
-        {name: 'Messages', icon: 'chat', route: '/messages/1'},
+        {name: 'Messages', icon: 'chat', route: '/messages/2'},
         {name: 'Settings', icon: 'settings', route: '/settings'}
       ],
     }
   },
   computed: {
-
+    auth() {
+      return this.$store.state.users.byId[1]
+    }
   }
 }
 </script>

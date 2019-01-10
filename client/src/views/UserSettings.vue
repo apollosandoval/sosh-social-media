@@ -1,4 +1,3 @@
-// TODO: prepopulate form fields
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
@@ -16,29 +15,33 @@
               <v-text-field
                 label="Profile Image"
                 prepend-icon="add_a_photo"
+                :value="authUser.profilePhotoURL"
               ></v-text-field>
               <!-- Name -->
               <v-text-field
                 label="Name"
                 prepend-icon="person"
+                :value="authUser.name"
               ></v-text-field>
               <v-divider></v-divider>
               <v-subheader>Basic Info</v-subheader>
               <!-- update email -->
               <v-text-field
                 label="Email"
-                value="default@aol.com"
                 prepend-icon="mail"
+                value="authUser.email"
               ></v-text-field>
               <!-- update bio -->
               <v-text-field
                 label="Bio"
                 prepend-icon="mode_edit"
+                :value="authUser.bio"
               ></v-text-field>
               <!-- update location -->
               <v-text-field
                 label="Location"
                 prepend-icon="room"
+                :value="authUser.location"
               ></v-text-field>
               <!-- update or delete -->
             </v-form>
@@ -55,7 +58,12 @@
 // TODO: Func: updateUserSettings()
 <script>
 export default {
-  
+  computed: {
+    authUser() {
+      let { auth, users } = this.$store.state;
+      return users.byId[auth.user_id];
+    }
+  }
 }
 </script>
 
