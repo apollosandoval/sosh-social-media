@@ -10,6 +10,7 @@
       <v-layout column align-center>
         <v-flex></v-flex>
       </v-layout>
+      <!-- TODO: fix styling for list tiles -->
       <v-list three-line>
         <v-divider></v-divider>
         <v-list-tile v-for="friend in friends" :key="`friend-${friend.name}`">
@@ -23,7 +24,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
+
     <v-layout column>
+      <!-- TODO: add component to post new messages -->
       <chat-bubble />
     </v-layout>
   </v-container>

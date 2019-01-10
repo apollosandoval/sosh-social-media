@@ -10,7 +10,22 @@ export default {
   },
 
   // getters
-  getters: {},
+  getters: {
+    //TODO: Func: getMessagesByConversation()
+    conversationByFriendId: (state) => (friend_id) => {
+      let conv = state.allIds.reduce( (acc, messageId) => {
+        let { from_user_id, to_user_id } = state.byId[messageId];
+        if (from_user_id === friend_id && to_user_id === 1) {
+          acc.push(state.byId[messageId]);
+        }
+        if (from_user_id === 1 && to_user_id === friend_id) {
+          acc.push(state.byId[messageId]);
+        }
+        return acc;
+      }, []);
+      return conv.sort( (a, b) => a.created_at - b.created_at);
+    }
+  },
 
   // actions
   actions: {

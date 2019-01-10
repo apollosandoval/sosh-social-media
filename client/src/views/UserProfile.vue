@@ -3,6 +3,7 @@
     <!-- Top Section: User's banner, profile picture, and name -->
     <v-layout row justify-center>
       <v-flex xs12 sm6 offset-s3>
+        <!-- TODO: figure out why async is creating a race condition -->
         <user-profile-card user_id="5" v-if="Object.keys(statusesById).length > 0" />
       </v-flex>
     </v-layout>

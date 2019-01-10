@@ -1,3 +1,4 @@
+// TODO: prepopulate form fields
 <template>
   <v-container fluid fill-height>
     <v-layout align-center justify-center>
@@ -26,6 +27,7 @@
               <!-- update email -->
               <v-text-field
                 label="Email"
+                value="default@aol.com"
                 prepend-icon="mail"
               ></v-text-field>
               <!-- update bio -->
@@ -50,7 +52,7 @@
     </v-layout>
   </v-container>
 </template>
-
+// TODO: Func: updateUserSettings()
 <script>
 export default {
   
