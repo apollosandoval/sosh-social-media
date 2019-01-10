@@ -4,7 +4,7 @@
     <v-layout row justify-center>
       <v-flex xs12 sm6 offset-s3>
         <!-- TODO: figure out why async is creating a race condition -->
-        <user-profile-card user_id="5" v-if="Object.keys(statusesById).length > 0" />
+        <user-profile-card :user_id="userId" />
       </v-flex>
     </v-layout>
     <!-- Bottom Section: Status Timeline -->
@@ -27,8 +27,11 @@ export default {
   },
   computed: {
     statusesById() {
-      return this.$store.getters.statusesById(5);
+      return this.$store.getters.statusesById(Number(this.$route.params.id));
     },
+    userId() {
+      return Number(this.$route.params.id);
+    }
   }
 }
 </script>

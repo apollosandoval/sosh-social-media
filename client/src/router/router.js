@@ -25,7 +25,7 @@ export default new Router({
       path: '/friends',
       component: ManageFriends,
     }, {
-      path: '/profile',
+      path: '/profile/:id',
       component: UserProfile,
     }, {
       path: '/messages',

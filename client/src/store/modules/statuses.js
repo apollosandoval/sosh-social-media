@@ -13,8 +13,12 @@ export default {
   getters: {
     statusesById: (state) => (user_id) => {
       return state.allIds
-        .map( id => state.byId[id] )
-        .filter( status => status.user_id === user_id)
+        .reduce( (acc, cur_id) => {
+          if (state.byId[cur_id].user_id === user_id) {
+            acc.push(state.byId[cur_id]);
+          }
+          return acc;
+        }, [])
     },
   },
 

@@ -17,6 +17,8 @@
               <v-divider v-if="index !== 0" :key="`divider-${index}`"></v-divider>
               <v-list-tile
                 :key="`friend-${friend.name}`"
+                router
+                :to="`/profile/${friend.id}`"
               >
                 <v-list-tile-avatar>
                   <img :src="friend.profilePhotoURL">
