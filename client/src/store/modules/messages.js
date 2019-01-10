@@ -11,7 +11,6 @@ export default {
 
   // getters
   getters: {
-    //TODO: Func: getMessagesByConversation()
     conversationByFriendId: (state) => (friend_id) => {
       let conv = state.allIds.reduce( (acc, messageId) => {
         let { from_user_id, to_user_id } = state.byId[messageId];
