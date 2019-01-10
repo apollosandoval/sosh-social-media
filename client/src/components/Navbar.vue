@@ -7,7 +7,11 @@
       <v-spacer></v-spacer>
     </v-toolbar>
 
-    <v-navigation-drawer v-model="drawer" app color="primary">
+    <v-navigation-drawer
+      app
+      v-model="drawer"
+      color="primary"
+    >
       <v-layout column align-center>
         <v-flex class="mt-5">
           <v-avatar size="150">
@@ -35,14 +39,18 @@ export default {
   data() {
     return {
       drawer: false,
+      mini: true,
       links: [
         {name: 'Home', icon: 'dashboard', route: '/home'},
         {name: 'Friends', icon: 'contacts', route: '/friends'},
         {name: 'Messages', icon: 'chat', route: '/messages'},
         {name: 'Settings', icon: 'settings', route: '/settings'}
-      ]
+      ],
     }
   },
+  computed: {
+
+  }
 }
 </script>
 
