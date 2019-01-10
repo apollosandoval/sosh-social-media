@@ -22,6 +22,7 @@ export default {
         }
         return acc;
       }, []);
+      // FIXME: messages are not coming back sorted
       return conv.sort( (a, b) => a.created_at - b.created_at);
     }
   },

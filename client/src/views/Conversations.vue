@@ -7,21 +7,23 @@
       permanent
       stateless
     >
-      <v-layout column align-center>
-        <v-flex></v-flex>
-      </v-layout>
       <!-- TODO: fix styling for list tiles -->
       <v-list three-line>
-        <v-divider></v-divider>
-        <v-list-tile v-for="friend in friends" :key="`friend-${friend.name}`">
-          <v-list-tile-avatar>
-            <img :src="friend.profilePhotoURL" >
-          </v-list-tile-avatar>
-          <v-list-tile-content>
-            <v-list-tile-title>{{friend.name}}</v-list-tile-title>
-            <v-list-tile-sub-title>{{friend.bio}}</v-list-tile-sub-title>
-          </v-list-tile-content>
-        </v-list-tile>
+
+        <template v-for="(friend, index) in friends">
+          <v-divider v-if="index!==0" :key="`divider-${index}`"></v-divider>
+          <v-list-tile :key="`friend-${friend.name}`">
+            <v-list-tile-avatar>
+              <img :src="friend.profilePhotoURL" >
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>{{friend.name}}</v-list-tile-title>
+              <!-- TODO: display text of most recent message -->
+              <v-list-tile-sub-title>{{friend.bio}}</v-list-tile-sub-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </template>
+
       </v-list>
     </v-navigation-drawer>
 
@@ -41,7 +43,13 @@ export default {
   },
   computed: {
     friends() {
-      return this.$store.state.users.allIds.map(id => this.$store.state.users.byId[id])
+      let { users } = this.$store.state;
+      return users.allIds.reduce( (acc, cur_id) => {
+        if (users.byId[cur_id].id !== this.$store.state.auth.user_id) {
+          acc.push(users.byId[cur_id]);
+        }
+        return acc;
+      }, [])
     }
   }
 }
