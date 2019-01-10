@@ -25,10 +25,6 @@ export default {
     'status-timeline': StatusTimeline,
     'new-status-form': StatusForm,
   },
-  mounted() {
-    this.$store.dispatch('getAllUsers');
-    this.$store.dispatch('getAllStatuses');
-  },
   computed: {
     statuses() {
       const { allIds, byId } = this.$store.state.statuses;

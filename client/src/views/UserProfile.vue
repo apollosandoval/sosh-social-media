@@ -24,10 +24,6 @@ export default {
     'status-timeline': StatusTimeline,
     'user-profile-card': UserProfileCard,
   },
-  mounted() {
-    this.$store.dispatch('getAllUsers');
-    this.$store.dispatch('getAllStatuses');
-  },
   computed: {
     statusesById() {
       return this.$store.getters.statusesById(5);

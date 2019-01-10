@@ -5,6 +5,7 @@ import Dashboard from '../views/Dashboard';
 import ManageFriends from '../views/ManageFriends';
 import UserProfile from '../views/UserProfile';
 import UserSettings from '../views/UserSettings';
+import Conversations from '../views/Conversations';
 
 Vue.use(Router);
 
@@ -26,6 +27,9 @@ export default new Router({
     }, {
       path: '/profile',
       component: UserProfile,
+    }, {
+      path: '/messages',
+      component: Conversations,
     }
   ]
 });

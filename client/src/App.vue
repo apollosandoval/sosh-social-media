@@ -17,6 +17,11 @@ export default {
   components: {
     'nav-bar': Navbar,
   },
+  mounted() {
+    this.$store.dispatch('getAllUsers');
+    this.$store.dispatch('getAllStatuses');
+    this.$store.dispatch('getAllMessages');
+  }
   
 }
 </script>
