@@ -14,9 +14,6 @@ export default new Router({
   routes: [
     {
       path: '/',
-      component: Login
-    }, {
-      path: '/home',
       component: Dashboard
     }, {
       path: '/settings',
@@ -28,7 +25,7 @@ export default new Router({
       path: '/profile/:id',
       component: UserProfile,
     }, {
-      path: '/messages',
+      path: '/messages/:id',
       component: Conversations,
     }
   ]

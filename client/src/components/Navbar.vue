@@ -41,9 +41,9 @@ export default {
       drawer: false,
       mini: true,
       links: [
-        {name: 'Home', icon: 'dashboard', route: '/home'},
+        {name: 'Home', icon: 'dashboard', route: '/'},
         {name: 'Friends', icon: 'contacts', route: '/friends'},
-        {name: 'Messages', icon: 'chat', route: '/messages'},
+        {name: 'Messages', icon: 'chat', route: '/messages/1'},
         {name: 'Settings', icon: 'settings', route: '/settings'}
       ],
     }

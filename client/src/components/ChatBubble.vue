@@ -17,8 +17,7 @@ export default {
   },
   computed: {
     messages() {
-      // TODO: make `friendId` param dynamic from route
-      return this.$store.getters.conversationByFriendId(2);
+      return this.$store.getters.conversationByFriendId(Number(this.$route.params.id));
     }
   }
 }

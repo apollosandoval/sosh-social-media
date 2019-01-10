@@ -7,12 +7,15 @@
       permanent
       stateless
     >
-      <!-- TODO: fix styling for list tiles -->
       <v-list three-line>
 
         <template v-for="(friend, index) in friends">
           <v-divider v-if="index!==0" :key="`divider-${index}`"></v-divider>
-          <v-list-tile :key="`friend-${friend.name}`">
+          <v-list-tile
+            :key="`friend-${friend.name}`"
+            router
+            :to="`/messages/${friend.id}`"
+          >
             <v-list-tile-avatar>
               <img :src="friend.profilePhotoURL" >
             </v-list-tile-avatar>

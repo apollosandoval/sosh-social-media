@@ -24,10 +24,11 @@
           </v-list-tile-avatar>
           <v-list-tile-content>
             <v-list-tile-title>{{user.name}}</v-list-tile-title>
+            <v-list-tile-sub-title>
+              <span>{{ message.created_at | moment("hA, D MMM YYYY") }}</span>
+            </v-list-tile-sub-title>
           </v-list-tile-content>
-          <v-layout align-center justify-end>
-            <span>{{ message.created_at | moment("D MMM YY, hA") }}</span>
-          </v-layout>
+          
         </v-list-tile>
       </v-card-actions>
     </v-card>
