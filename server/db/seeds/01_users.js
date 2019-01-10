@@ -9,7 +9,7 @@ exports.seed = function(knex, Promise) {
           name: 'Oscar Sandoval',
           email: 'osand@accidency.com',
           bio: 'Nulla adipisicing duis esse anim deserunt commodo magna. Minim cillum ut tempor aliquip mollit amet consequat deserunt nulla proident mollit proident in. Ad dolor amet occaecat irure labore aliqua velit consectetur nulla pariatur adipisicing elit amet. Duis ad do deserunt est quis duis. Minim proident pariatur aliquip magna magna ipsum do velit ullamco deserunt cillum irure anim. Aliquip labore incididunt duis aute et consectetur ea irure ad velit excepteur minim duis quis.\r\n',
-          profilePhotoURL: 'http://placehold.it/32x32',
+          profilePhotoURL: 'http://placepuppy.net/400/400',
           location: 'Phoenix, AZ',
           created_at: '2016-02-18T11:42:43 +07:00',
         }, {
