@@ -3,7 +3,7 @@
     <!-- Top Section: User's banner, profile picture, and name -->
     <v-layout row justify-center>
       <v-flex xs12 sm6 offset-s3>
-        <user-profile-card user_id="5" />
+        <user-profile-card user_id="5" v-if="Object.keys(statusesById).length > 0" />
       </v-flex>
     </v-layout>
     <!-- Bottom Section: Status Timeline -->
@@ -31,7 +31,7 @@ export default {
   computed: {
     statusesById() {
       return this.$store.getters.statusesById(5);
-    }
+    },
   }
 }
 </script>

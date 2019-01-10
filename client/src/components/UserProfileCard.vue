@@ -31,6 +31,8 @@ export default {
   props: ['user_id'],
   computed: {
     user() {
+      // console.log('props: ', this.user_id);
+      // console.log('user: ', this.$store.getters.userById(this.user_id));
       return this.$store.getters.userById(this.user_id);
     }
   }
