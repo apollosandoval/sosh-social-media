@@ -11,6 +11,7 @@ module.exports = (app) => {
 
   // routes for messages
   app.get('/messages', messages.getAll);
+  app.post('/messages/:user_id', messages.postMessage);
 
   // routes for statuses
   app.get('/statuses', status.getAll);
