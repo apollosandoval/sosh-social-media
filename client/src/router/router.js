@@ -6,6 +6,7 @@ import ManageFriends from '../views/ManageFriends';
 import UserProfile from '../views/UserProfile';
 import UserSettings from '../views/UserSettings';
 import Conversations from '../views/Conversations';
+import NotFound from '../views/NotFound';
 
 Vue.use(Router);
 
@@ -27,6 +28,9 @@ export default new Router({
     }, {
       path: '/messages/:id',
       component: Conversations,
+    }, {
+      path:'*',
+      component: NotFound,
     }
   ]
 });
