@@ -8,6 +8,7 @@ module.exports = (app) => {
   // routes for users
   app.get('/users', users.getAll);
   app.get('/users/:id', users.getById);
+  app.put('/users/:id', users.updateUser);
 
   // routes for messages
   app.get('/messages', messages.getAll);

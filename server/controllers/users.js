@@ -14,6 +14,13 @@ module.exports = {
       .then(data => {
         res.send(data);
       })
+  },
+
+  updateUser: (req, res) => {
+    knex('users').where('id', 1).update(req.body, '*')
+      .then( data => {
+        res.send(data);
+      })
   }
 
 };
