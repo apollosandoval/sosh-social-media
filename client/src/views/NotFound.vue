@@ -14,6 +14,12 @@
 
 <script>
 export default {
-  
+  beforeRouteEnter( to, from, next) {
+    next(vm => {
+      if (vm.$store.state.auth.loggedIn === false) {
+        vm.$router.push({path: '/login'})
+      }
+    })
+  },
 }
 </script>

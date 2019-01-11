@@ -41,7 +41,7 @@ export default {
   // TODO: Make a real login, what is this?
   methods: {
     login: function() {
-      this.$router.push({path: '/'})
+      this.$store.dispatch('login');
     }
   }
 }

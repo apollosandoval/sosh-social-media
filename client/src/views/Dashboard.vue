@@ -21,6 +21,13 @@ import StatusForm from '../components/StatusForm';
 import StatusTimeline from '../components/StatusTimeline';
 
 export default {
+  beforeRouteEnter( to, from, next) {
+    next(vm => {
+      if (vm.$store.state.auth.loggedIn === false) {
+        vm.$router.push({path: '/login'})
+      }
+    })
+  },
   components: {
     'status-timeline': StatusTimeline,
     'new-status-form': StatusForm,

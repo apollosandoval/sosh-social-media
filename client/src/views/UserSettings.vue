@@ -56,6 +56,13 @@
 // TODO: Func: updateUserSettings()
 <script>
 export default {
+  beforeRouteEnter( to, from, next) {
+    next(vm => {
+      if (vm.$store.state.auth.loggedIn === false) {
+        vm.$router.push({path: '/login'})
+      }
+    })
+  },
   data() {
     // TODO: Figure out how to bind data and prefill a form correctly, this is a mess.
     const { profilePhotoURL, name, email, bio, location} = this.$store.state.users.byId[1];

@@ -21,6 +21,13 @@ import StatusTimeline from '../components/StatusTimeline';
 import UserProfileCard from '../components/UserProfileCard';
 
 export default {
+  beforeRouteEnter( to, from, next) {
+    next(vm => {
+      if (vm.$store.state.auth.loggedIn === false) {
+        vm.$router.push({path: '/login'})
+      }
+    })
+  },
   components: {
     'status-timeline': StatusTimeline,
     'user-profile-card': UserProfileCard,
