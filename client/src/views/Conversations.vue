@@ -32,7 +32,6 @@
 
     <v-layout column>
       <v-flex>
-        <!-- TODO: handle send message form -->
         <v-form>
           <v-textarea
             @keyup.enter="sendMessage"

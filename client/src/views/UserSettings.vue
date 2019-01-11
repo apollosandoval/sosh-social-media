@@ -53,7 +53,7 @@
     </v-layout>
   </v-container>
 </template>
-// TODO: Func: updateUserSettings()
+
 <script>
 export default {
   beforeRouteEnter( to, from, next) {

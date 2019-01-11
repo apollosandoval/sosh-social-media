@@ -3,7 +3,6 @@
   <v-container>
     <v-layout justify-center>
       <v-flex xs12 sm6>
-        <!-- Insert New Status Form -->
         <new-status-form />
       </v-flex>
     </v-layout>

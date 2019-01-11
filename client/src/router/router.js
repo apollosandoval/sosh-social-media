@@ -10,6 +10,8 @@ import NotFound from '../views/NotFound';
 
 Vue.use(Router);
 
+// FIXME: Figure out how to really do auth
+
 export default new Router({
   mode: 'history',
   routes: [
