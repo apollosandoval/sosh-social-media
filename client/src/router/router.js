@@ -14,23 +14,26 @@ export default new Router({
   mode: 'history',
   routes: [
     {
+      path: '/login',
+      component: Login
+    }, {
       path: '/',
       component: Dashboard
     }, {
       path: '/settings',
-      component: UserSettings,
+      component: UserSettings
     }, {
       path: '/friends',
-      component: ManageFriends,
+      component: ManageFriends
     }, {
       path: '/profile/:id',
-      component: UserProfile,
+      component: UserProfile
     }, {
       path: '/messages/:id',
-      component: Conversations,
+      component: Conversations
     }, {
       path:'*',
-      component: NotFound,
+      component: NotFound
     }
   ]
 });
