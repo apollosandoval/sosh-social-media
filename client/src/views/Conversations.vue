@@ -31,7 +31,21 @@
     </v-navigation-drawer>
 
     <v-layout column>
-      <!-- TODO: add component to post new messages -->
+      <v-flex>
+        <!-- TODO: handle send message form -->
+        <v-form>
+          <v-textarea
+            @keyup.enter="sendMessage"
+            outline
+            auto-grow
+            counter
+            rows="1"
+            append-outer-icon="edit"
+            placeholder="What would you like to say..."
+            v-model="body"
+          ></v-textarea>
+        </v-form>
+      </v-flex>
       <chat-bubble />
     </v-layout>
   </v-container>
@@ -43,6 +57,21 @@ import ChatBubble from '../components/ChatBubble'
 export default {
   components: {
     'chat-bubble': ChatBubble,
+  },
+  data() {
+    return {
+      body: ''
+    }
+  },
+  methods: {
+    sendMessage: function() {
+      this.$store.dispatch('postMessage', {
+        body: this.body,
+        from_user_id: 1,
+        to_user_id: +this.$route.params.id,
+      });
+      this.body = '';
+    }
   },
   computed: {
     friends() {

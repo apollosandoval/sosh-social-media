@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-toolbar dark color="red lighten-2">
+    <v-toolbar dark color="primary">
       <v-toolbar-title>Update Your Friends</v-toolbar-title>
     </v-toolbar>
     <v-card-text>
@@ -23,7 +23,7 @@
 export default {
   data() {
     return {
-      'status': '',
+      status: '',
     }
   },
   methods: {

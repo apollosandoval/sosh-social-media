@@ -29,7 +29,7 @@
               <v-text-field
                 label="Email"
                 prepend-icon="mail"
-                value="authUser.email"
+                :value="authUser.email"
               ></v-text-field>
               <!-- update bio -->
               <v-text-field

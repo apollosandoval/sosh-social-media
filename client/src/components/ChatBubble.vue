@@ -7,7 +7,7 @@
     ></chat-message>
   </v-timeline>
 </template>
-// TODO: Dynamically populate ChatBubble
+
 <script>
 import ChatMessage from './ChatMessage'
 
@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     messages() {
-      return this.$store.getters.conversationByFriendId(Number(this.$route.params.id));
+      return this.$store.getters.conversationByFriendId(+(this.$route.params.id));
     }
   }
 }

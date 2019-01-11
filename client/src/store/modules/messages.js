@@ -22,7 +22,7 @@ export default {
         }
         return acc;
       }, []);
-      // FIXME: messages are not coming back sorted
+      // TODO: messages are not coming back sorted
       return conv.sort( (a, b) => a.created_at - b.created_at);
     }
   },
@@ -37,7 +37,14 @@ export default {
         context.commit('REQUEST_ALL_MESSAGES');
       }
     },
-
+    async postMessage(context, message) {
+      try {
+        const res = await axios.post('http://localhost:8082/messages/:user_id', message);
+        context.commit('ADD_MESSAGE', {message: res.data});
+      } catch (err) {
+        throw new Error(err);
+      }
+    }
   },
 
   // mutations
@@ -48,6 +55,14 @@ export default {
     RECEIVE_ALL_MESSAGES(state, payload) {
       state = normalizeData(state, payload.messages);
       state.isFetching = false;
+    },
+    ADD_MESSAGE(state, payload) {
+      const { message } = payload;
+      state.byId = {
+        ...state.byId,
+        [message[0].id]: message[0]
+      },
+      state.allIds = [message[0].id, ...state.allIds]
     }
   }
 }

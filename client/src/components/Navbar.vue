@@ -1,3 +1,4 @@
+// TODO: make user data render dynamically
 <template>
   <nav>
     <v-toolbar dark color="primary" app>
@@ -24,10 +25,10 @@
         <v-flex>
           <v-list>
             <v-list-tile-title>
-              {{auth.name}}
+              Oscar Sandoval
             </v-list-tile-title>
             <v-list-tile-sub-title>
-              {{auth.location}}
+              Phoenix, AZ
             </v-list-tile-sub-title>
           </v-list>
         </v-flex>

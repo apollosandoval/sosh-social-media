@@ -3,12 +3,23 @@
     <v-timeline-item
       v-for="status in statuses"
       :key="`status-${status.id}`"
-      color="red lighten-2"
+      color="primary"
       large
     >
       <span slot="opposite">{{ status.created_at | moment("from", "now") }}</span>
       <v-card class="elevation-2">
-        <v-card-title class="headline">{{users[status.user_id].name}}</v-card-title>
+        <v-card-title>
+          <v-list-tile>
+            <v-list-tile-avatar>
+              <v-img
+                :src="users[status.user_id].profilePhotoURL"
+              ></v-img>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>{{users[status.user_id].name}}</v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-card-title>
         <v-card-text>
           {{status.status}}
         </v-card-text>
